@@ -21,5 +21,6 @@ class Solution:
                 cur.next = l2
                 l2 = l2.next
             cur = cur.next
-        cur.next = l1 or l2
+        cur.next = l1 or l2 ##注意这里的退出条件，最后把cur.next赋值给l1,l2中没有到None的那一个，或者任意一个list的None结点
         return dum.next
+    
