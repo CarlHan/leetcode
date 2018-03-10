@@ -1,6 +1,3 @@
-# python3
-
-
 import sys
 
 
@@ -27,6 +24,32 @@ class Bracket:
 
 
 def checker(text):
+    """Check balanced brackets.
+    Given a text of opening and closing brackets, check whether it’s balanced.
+    If the brackets are used correctly, return “Success” (without the quotes).
+    Otherwise, output the 1-based index of the first unmatched closing bracket,
+    and if there are no unmatched closing brackets, output the 1-based index of
+    the first unmatched opening bracket.
+    Samples:
+    >>> checker("{[]}()")
+    Success
+    >>> # Explanation: Here there are 3 pairs of brackets, one of them is nested
+    >>> # into another one, and the third one is separate from the first two.
+    >>> checker("{[}")
+    3
+    >>> # Explanation: The bracket } is unmatched, because the last unmatched
+    >>> # opening bracket before it is [ and not {. It is the first unmatched
+    >>> # closing bracket, and our first priority is to output the first
+    >>> # unmatched closing bracket, and its position is 3, so we output 3.
+    >>> checker("foo(bar);")
+    Success
+    >>> # Explanation: All the brackets are matching, and all the other symbols
+    >>> # can be ignored.
+    >>> checker("foo(bar[i);")
+    10
+    >>> # Explanation: ) doesn’t match [, so ) is the first unmatched closing
+    >>> # bracket, so we output its position, which is 10.
+    """
     stack = []
     for index, char in enumerate(text, start=1):
 
@@ -49,4 +72,4 @@ def checker(text):
 
 if __name__ == "__main__":
     text = sys.stdin.read().strip("\n")
-    print(checker(text))
+print(checker(text))
