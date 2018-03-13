@@ -19,6 +19,7 @@ class Solution(object):
             result = self.binary_search(left,right,nums,target)
             if result == -1:
                 return [-1,-1]
+            ## 下面从当前index向两边寻找边界点，lc，rc
             else:
                 lc = rc = result
                 while lc >= 0 and nums[lc] == target:
