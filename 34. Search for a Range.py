@@ -19,7 +19,7 @@ class Solution(object):
             result = self.binary_search(left,right,nums,target)
             if result == -1:
                 return [-1,-1]
-            ## 下面从当前index向两边寻找边界点，lc，rc,似乎这个搜索好像事件复杂度也是线性的………………O(n)
+            ## 下面从当前index向两边寻找边界点，lc，rc,似乎这个搜索好像时间复杂度也是线性的………………O(n)
             else:
                 lc = rc = result
                 while lc >= 0 and nums[lc] == target:
