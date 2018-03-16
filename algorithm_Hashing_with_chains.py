@@ -19,6 +19,7 @@ class QueryProcessor:
         # store all strings in one list
         self.hashtable = []
         
+        ##建表，表长为bucket_count，每个位置处是一个chain结构
         for i in range(self.bucket_count):
             self.hashtable.append([])
         ##这个位置建表的时候可千万别用 self.hashtable = [[]] * self.bucket_count, 这样出现的问题是：
