@@ -9,7 +9,7 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
 
     p = 1000000007
-    x = 20
+    x = 20                  ##random.randint(0,p)
     result = []
 
     phash = _hash_func(pattern,p,x)
