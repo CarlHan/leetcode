@@ -58,7 +58,7 @@ def preHashes(T,len_P,p,x):
 
 def _hash_func(s,p,x):
     ans = 0
-    for c in (s):
+    for c in reversed(s):                       ##按计算规则这里是reversed
         ans = ((ans * x + ord(c)) % p + p) % p
     return ans
 
