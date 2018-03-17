@@ -40,7 +40,7 @@ def preHashes(T,len_P,p,x):
     H = []
     n = len(T) - len_P + 1
     for i in range(n):
-        H.append(0)
+        H.append(None)          ##这里不要append 0 进去，不然对后面的计算有影响
     s = T[(len(T)-len_P):len(T)]
     H[len(T) - len_P] = _hash_func(s,p,x)
 
