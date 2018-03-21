@@ -1,3 +1,5 @@
+## O(nlogn)
+
 class Solution(object):
     def majorityElement(self, nums):
         """
@@ -25,3 +27,5 @@ class Solution(object):
             right_count = sum(1 for i in range(lo,hi+1) if nums[i] == right)
             
         return left if left_count > right_count else right      ##最终return给上一个子问题，然后再重复
+
+    ##此题其实也可以用hash做，时间复杂度为O(n),空间复杂度为O(n)
